@@ -1,6 +1,7 @@
-import { faBars, faWindowClose } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSmile, faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function HeaderNav({ fixed }) {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -9,12 +10,10 @@ export default function HeaderNav({ fixed }) {
             <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3">
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-                        <a
-                            className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase "
-                            href="#pablo"
-                        >
-                            Happy Resort
-                        </a>
+                        <Link to="/">
+                            <FontAwesomeIcon icon={faSmile} className="mr-2 text-yellow-300" />
+                            <span className="uppercase font-semibold">Happy Resort</span>
+                        </Link>
                         <button
                             className="cursor-pointer text-xl leading-none px-4 py-1 border border-solid border-transparent rounded bg-gray-300 text-white block lg:hidden outline-none focus:outline-none"
                             type="button"
@@ -32,29 +31,18 @@ export default function HeaderNav({ fixed }) {
                     >
                         <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
                             <li className="nav-item">
-                                <a
-                                    className="md:px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug  hover:opacity-75"
-                                    href="#pablo"
-                                >
-                                    <i className="fab fa-facebook-square text-lg leading-lg  opacity-75"></i><span className="md:ml-2">Share</span>
-                                </a>
+                                <Link to="/" className="md:mr-2">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <a
-                                    className="md:px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug  hover:opacity-75"
-                                    href="#pablo"
-                                >
-                                    <i className="fab fa-twitter text-lg leading-lg opacity-75"></i><span className="md:ml-2">Tweet</span>
-                                </a>
+                                <Link to="/services" className="md:mr-2">Services</Link>
                             </li>
                             <li className="nav-item">
-                                <a
-                                    className="md:px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug  hover:opacity-75"
-                                    href="#pablo"
-                                >
-                                    <i className="fab fa-pinterest text-lg leading-lg  opacity-75"></i><span className="md:ml-2">Pin</span>
-                                </a>
+                                <Link to="/rooms" className="md:mr-2">Rooms</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link to="/login" className="md:mr-2">Login</Link>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
