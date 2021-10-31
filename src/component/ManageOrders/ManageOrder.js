@@ -13,7 +13,7 @@ const ManageOrder = () => {
                 setOrders(data);
                 setLoading(true);
             });
-    }, []);
+    }, [orders]);
     return (
         <>
             <section className="section-title mt-8 mb-4">

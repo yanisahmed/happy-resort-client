@@ -15,11 +15,11 @@ const MyOrder = () => {
                 setOrders(data);
                 setLoading(true);
             });
-    }, []);
+    }, [orders]);
     return (
         <>
             <section className="section-title mt-8 mb-4">
-                <h3 className="uppercase text-center font-semibold text-3xl">Manage Orders</h3>
+                <h3 className="uppercase text-center font-semibold text-3xl">My Orders</h3>
                 <p className="text-center text-gray-300 mt-2"><FontAwesomeIcon icon={faRulerHorizontal} /><FontAwesomeIcon icon={faSmile} className="mx-2" /><FontAwesomeIcon icon={faRulerHorizontal} /></p>
             </section>
             {!loading ? <button type="button" className="bg-rose-600 ..." disabled>
