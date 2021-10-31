@@ -6,7 +6,7 @@ import { useHistory } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 
 const BookingDetails = ({ room }) => {
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit } = useForm();
     const { user } = useAuth();
     let history = useHistory();
 
