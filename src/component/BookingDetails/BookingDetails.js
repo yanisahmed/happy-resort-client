@@ -12,6 +12,7 @@ const BookingDetails = ({ room }) => {
 
     const onSubmit = data => {
         // console.log(data);
+        data.product_name = room.title;
         data.key = room._id;
         data.price = room.price;
         data.status = 'Pending';
