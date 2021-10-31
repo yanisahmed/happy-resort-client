@@ -20,7 +20,7 @@ const AddRoom = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         // console.log(data);
-        fetch('http://localhost:5000/rooms', {
+        fetch('https://quiet-bastion-48114.herokuapp.com/rooms', {
             method: "POST",
             headers: {
                 'Content-Type': "application/json"
