@@ -1,12 +1,24 @@
 import { faSmile } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { useForm } from 'react-hook-form';
+import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
+    // const { register, formState: { errors }, handleSubmit } = useForm();
+    const { singInUsingGoogle } = useAuth();
+    const location = useLocation();
+    console.log(location.state?.from);
+    const redirect_url = location.state?.from || '/';
+    let history = useHistory();
 
     const handleGoogleLogin = () => {
-
+        singInUsingGoogle()
+            .then(result => {
+                history.push(redirect_url);
+            });
     }
     return (
         <div className="container mx-auto flex justify-center">

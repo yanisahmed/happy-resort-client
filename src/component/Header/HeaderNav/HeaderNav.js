@@ -2,9 +2,11 @@ import { faBars, faSmile, faWindowClose } from "@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 export default function HeaderNav({ fixed }) {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
+    const { user, logOut } = useAuth();
     return (
         <>
             <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3">
@@ -33,14 +35,15 @@ export default function HeaderNav({ fixed }) {
                             <li className="nav-item">
                                 <Link to="/" className="md:mr-2">Home</Link>
                             </li>
-                            <li className="nav-item">
+                            {user.displayName && <li className="nav-item">
                                 <Link to="/services" className="md:mr-2">Services</Link>
-                            </li>
+                            </li>}
                             <li className="nav-item">
                                 <Link to="/rooms" className="md:mr-2">Rooms</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/login" className="md:mr-2">Login</Link>
+                                {!user.displayName ? <Link to="/login" className="md:mr-2">Login</Link> : <Link to="/login" className="md:mr-2"><span onClick={logOut} type="button">Log Out</span></Link>}
+
                             </li>
 
                         </ul>
