@@ -11,6 +11,9 @@ import RoomDetails from './Pages/RoomDetails/RoomDetails';
 import AuthProvider from "./context/AuthProvider";
 import BookingPage from './Pages/BookingPage/BookingPage';
 import PrivateRoute from './component/PrivateRoute/PrivateRoute'
+import ThankYou from './component/ThankYou/ThankYou';
+import ManageOrder from './component/ManageOrders/ManageOrder';
+import MyOrders from './component/MyOrders/MyOrders';
 
 function App() {
   return (
@@ -23,6 +26,15 @@ function App() {
           </Route>
           <PrivateRoute path="/services">
             <Services></Services>
+          </PrivateRoute>
+          <PrivateRoute path="/manage-orders">
+            <ManageOrder></ManageOrder>
+          </PrivateRoute>
+          <PrivateRoute path="/my-orders">
+            <MyOrders></MyOrders>
+          </PrivateRoute>
+          <PrivateRoute path="/thank-you">
+            <ThankYou></ThankYou>
           </PrivateRoute>
           <Route exact path="/rooms">
             <Rooms></Rooms>

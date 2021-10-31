@@ -35,12 +35,19 @@ export default function HeaderNav({ fixed }) {
                             <li className="nav-item">
                                 <Link to="/" className="md:mr-2">Home</Link>
                             </li>
-                            {user.displayName && <li className="nav-item">
-                                <Link to="/services" className="md:mr-2">Services</Link>
-                            </li>}
                             <li className="nav-item">
                                 <Link to="/rooms" className="md:mr-2">Rooms</Link>
                             </li>
+                            {user.displayName && <li className="nav-item">
+                                <Link to="/services" className="md:mr-2">Services</Link>
+                            </li>}
+                            {user.displayName && <li className="nav-item">
+                                <Link to="/manage-orders" className="md:mr-2">Manage Order</Link>
+                            </li>}
+                            {user.displayName && <li className="nav-item">
+                                <Link to="/my-orders" className="md:mr-2">My Order</Link>
+                            </li>}
+
                             <li className="nav-item">
                                 {!user.displayName ? <Link to="/login" className="md:mr-2">Login</Link> : <Link to="/login" className="md:mr-2"><span onClick={logOut} type="button">Log Out</span></Link>}
 

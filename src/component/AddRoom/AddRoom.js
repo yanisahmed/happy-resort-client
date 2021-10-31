@@ -3,18 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-/*
-https://i.ibb.co/wMt3FrC/room-1.jpg
-https://i.ibb.co/1Lfx46f/room-2.jpg
-https://i.ibb.co/0mjjRbh/room-3.jpg
-https://i.ibb.co/fQ5CRzg/room-4.jpg
-https://i.ibb.co/KbGrb5v/room-5.jpg
-https://i.ibb.co/Nxp9xdm/room-6.jpg
-https://i.ibb.co/WG8j5bR/room-7.jpg
-https://i.ibb.co/p0PLGt2/room-8.jpg
-https://i.ibb.co/s1F0c2n/room-9.jpg
-https://i.ibb.co/5hqSjYZ/room-10.jpg
-*/
+
 
 const AddRoom = () => {
     const { register, handleSubmit, reset } = useForm();
