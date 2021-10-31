@@ -8,7 +8,7 @@ import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
     // const { register, formState: { errors }, handleSubmit } = useForm();
-    const { singInUsingGoogle } = useAuth();
+    const { singInUsingGoogle, setIsLoading } = useAuth();
     const location = useLocation();
     console.log(location.state?.from);
     const redirect_url = location.state?.from || '/';
@@ -17,8 +17,13 @@ const Login = () => {
     const handleGoogleLogin = () => {
         singInUsingGoogle()
             .then(result => {
+                setIsLoading(true);
                 history.push(redirect_url);
-            });
+            })
+            .catch(err => console.log(err))
+            .finally(() => {
+                setIsLoading(false);
+            })
     }
     return (
         <div className="container mx-auto flex justify-center">

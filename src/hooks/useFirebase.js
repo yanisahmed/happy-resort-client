@@ -7,6 +7,7 @@ initializeAuthentication();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
     const [loginError, setLoginError] = useState('');
     const [signUpSuccess, setSignUpSuccess] = useState('');
     let history = useHistory();
@@ -65,14 +66,17 @@ const useFirebase = () => {
             } else {
                 setUser({});
             }
+            setIsLoading(false);
         });
         return () => unsbscribed;
     }, [])
 
+
+
     const logOut = () => {
         signOut(auth)
             .then(() => {
-
+                setUser({});
             })
     }
 
@@ -84,7 +88,9 @@ const useFirebase = () => {
         signUpUsingEmail,
         signInUsingEmail,
         updateEmailSignUpProfile,
-        logOut
+        logOut,
+        isLoading,
+        setIsLoading
     }
 }
 
