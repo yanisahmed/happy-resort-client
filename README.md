@@ -11,6 +11,6 @@ Live Link [Happy Resort](https://happy-resort-101.web.app/).
 - *Express*
 
 ## Website Features
-- *Responsive Design*
-- *Booking System*
-- *Resort Hotel Overview*
+- *Login authentication, booking functionality, stored data to database*
+- *REST API, user management, and project hosted to firebase*
+- *User can book resort and cancel his reservation using his account*
